@@ -1,0 +1,35 @@
+<html lang="en">
+	<style>
+		.required:after{
+			content:"*";
+			color: red;
+		}
+	</style>
+	<header>
+		<h1>User Registration: </h1>
+	</header>
+	<body>
+		<form method="POST" action="http://example.org/">
+			<div>
+				<label for="userName" class="required">UserName: </label>
+				<input type="text" name="userName" required>
+			</div>
+			<div>
+				<label for="password1" class="required">Password: </label>
+				<input type="text" name="password1" required>
+			</div>
+			<div>
+				<label for="password2" class="required">Re-Enter Password: </label>
+				<input type="text" name="password2" required>
+			</div>
+			<div>
+				<input type="checkbox" name="termsAndConditions" id="termsAndConditions" required>
+				<label for="termsAndConditions" class="required">I Agree To Terms and Conditions</label>
+			</div>
+			<input type="submit">
+		</form>
+		
+		<a href="http://example.org/">Already A Member</a>
+		
+	</body>
+</html>
