@@ -18,15 +18,15 @@
 			  <div class="group">
 				<label for="Address" class="label">Delivery Address</label>
 				<input id="Address" type="text" class="input" value="address from profile"readonly>
-
-			   
 			  </div>
-
+			  <div class="group">
+				<label for="deliveryDate" class="label required">Delivery Date:</label>
+				<input type="date" name="deliveryDate" id="deliveryDate" required>
+			  </div>
 			  <div class="group">
 				<label for="price" class="label">Suggested Price/Gallon($)</label>
 				<input id="price" type="number" class="input" value="0" readonly>
 			  </div>
-
 			  
 			   <div class="group">
 				<label for="totalamount" class="label">Total Amount Due($)</label>
@@ -34,6 +34,7 @@
 			  </div>
 			  
 			  <div class="group">
+				<p><span class="required"></span> indicates required field.</p>
 				<input type="submit" class="button" value="Get Quote">
 			  </div>
 		</form>
