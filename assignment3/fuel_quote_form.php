@@ -26,7 +26,7 @@
 			  </div>
 			  <div class="group">
 				<label for="price" class="label">Suggested Price/Gallon($)</label>
-				<input id="price" type="number" class="input" value="$2.00" readonly>
+				<input id="price" type="number" class="input" value="2" readonly>
 			  </div>
 			  
 			   <div class="group">
