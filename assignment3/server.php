@@ -73,13 +73,26 @@ elseif(isset($_POST["login_user"]))
 		$password = md5($password);
 		
 		$query = "SELECT * FROM user_logins WHERE username='$username' AND password='$password' ";
+		$address_query = "SELECT 
+							address_1,
+							city,
+							state,
+							zipcode
+						FROM user_details WHERE username='$username'";
+		
 		$results = mysqli_query($db, $query);
+		$delivery_address_result = mysqli_query($db, $address_query);
+		$delivery_address = mysqli_fetch_assoc($delivery_address_result);
 		if(mysqli_num_rows($results))
 		{
-			$_SESSION["username"] = $username;
-			$_SESSION["sucess"] = "Logged in sucessfully";
-			
-			header("location: dashboard.php");
+			if(mysqli_num_rows($delivery_address_result))
+			{
+				$_SESSION["username"] = $username;
+				$_SESSION["delivery_address"] = $delivery_address["address_1"]." ".$delivery_address["city"]." ".$delivery_address["state"].", ".$delivery_address["zipcode"];
+				$_SESSION["sucess"] = "Logged in sucessfully";
+				
+				header("location: dashboard.php");
+			}
 		}
 		else
 		{
@@ -119,6 +132,7 @@ elseif(isset($_POST["update_user"]))
 		mysqli_query($db, $insert_query);
 		
 		$_SESSION["username"] = $username;
+		$_SESSION["delivery_address"] = $address_1." ".$city." ".$state.", ".$zipcode;
 		$_SESSION["sucess"] = "Updated profile sucessfully";
 			
 			header("location: dashboard.php");
