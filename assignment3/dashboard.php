@@ -42,7 +42,7 @@
 				<a href="profile.php"><input type="submit" class="button" value="Update Profile"></a>
 			</div>
 			<div class="group">
-				<a href="./fuel_quote_form.html"><input type="submit" class="button" value="Get Quote"></a>
+				<a href="./fuel_quote_form.php"><input type="submit" class="button" value="Get Quote"></a>
 			</div>
 			<div class="group">
 				<a href="./fuel_quote_history.html"><input type="submit" class="button" value="View Fuel History"></a>
