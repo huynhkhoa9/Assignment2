@@ -93,6 +93,7 @@ elseif(isset($_POST["login_user"]))
 			{
 				$_SESSION["username"] = $userNameValue;
 				$_SESSION["delivery_address"] = $delivery_address["address_1"]." ".$delivery_address["city"]." ".$delivery_address["state"].", ".$delivery_address["zipcode"];
+				$_SESSION["address1"] = $delivery_address["address_1"];
 				$_SESSION["company_name"] = $delivery_address["company_name"];
 				$_SESSION["sucess"] = "Logged in sucessfully";
 				
@@ -146,8 +147,7 @@ elseif(isset($_POST["update_user"]))
 		$_SESSION["username"] = $userNameValue;
 		$_SESSION["company_name"] = $company_name;
 		$_SESSION["delivery_address"] = $address_1." ".$city." ".$state.", ".$zipcode;
-		$_SESSION["sucess"] = "Updated profile sucessfully";
-		$_SESSION["rate"] = $in_state;	
+		$_SESSION["sucess"] = "Updated profile sucessfully";	
 			header("location: dashboard.php");
 	}
 }

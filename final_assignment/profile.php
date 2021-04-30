@@ -11,15 +11,16 @@
   <div class="login-wrap">
       <div class="login-html">
 		  <h1>User Profile</h1>
+			<h3><?php echo $_SESSION["delivery_address"]?></h2>
         <div class="login-form">
 		<form method="POST" action="server.php">
           <div class="group">
             <label for="username" class="label required">Name</label>
-            <input name="username" id="username" type="text" class="input" required>
+            <input name="username" id="username" type="text" class="input" value=<?php echo $_SESSION["username"]?> required>
           </div>
 		   <div class="group">
             <label for="companyname" class="label required">Company Name</label>
-            <input name="companyname" id="companyname" type="text" class="input" required>
+            <input name="companyname" id="companyname" type="text" class="input" value=<?php echo $_SESSION["company_name"]?> required>
           </div>
           <div class="group">
             <label for="address_1" class="label required">Address 1</label>
