@@ -37,7 +37,7 @@
 		<?php endif ?>
 		<?php if(isset($_SESSION['username'])) :?>
 			<h3>Welcome <strong><?php echo $_SESSION["username"]; ?>, <?php echo $_SESSION["company_name"]; ?></strong></h3>
-		
+			<p><?php echo $_SESSION["delivery_address"]; ?></p>
         <div class="login-form">
 			<div class="group">
 				<a href="profile.php"><input type="submit" class="button" value="Update Profile"></a>
